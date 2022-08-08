@@ -5,14 +5,13 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from tensorflow.keras import layers, losses
-from tensorflow.keras.datasets import fashion_mnist
 from tensorflow.keras.models import Model
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 
-(x_train, _), (x_test, _) = fashion_mnist.load_data()
+(x_train, _), (x_test, _) = tf.keras.datasets.fashion_mnist.load_data()
 x_train = x_train.astype('float32') / 255
 x_test = x_test.astype('float32') / 255
 
@@ -53,7 +52,7 @@ decoded_imgs = autoencoder.decoder( encoded_imgs ) .numpy()
 
 
 
-n = 10
+n = 20
 plt.figure(figsize=(20, 4))
 for i in range(n):
   # display original

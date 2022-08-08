@@ -26,14 +26,16 @@ print( train_X.shape, test_X.shape )
 
 model = tf.keras.Sequential([
     tf.keras.layers.Dense( 784, activation='relu', input_shape=(784,) ),
-    tf.keras.layers.Dense( 64, activation='relu' ),
+    tf.keras.layers.Dense( 4096, activation='relu' ),
+    tf.keras.layers.Dense( 40960, activation='relu' ),
+    tf.keras.layers.Dense( 4096, activation='relu' ),
     tf.keras.layers.Dense( 784, activation='sigmoid' )
 ])
 model.compile( optimizer=tf.optimizers.Adam(), loss='mse' )
 model.summary()
 
 
-model.fit( train_X, train_X, epochs=10, batch_size=256 )
+model.fit( train_X, train_X, epochs=10000, batch_size=256 )
 
 
 
