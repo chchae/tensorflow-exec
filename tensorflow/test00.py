@@ -1,18 +1,40 @@
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
 
 
-d0 = tf.ones( (1,) )
-#print( d0 )
 
-d1 = tf.ones( (2,) )
-#print( d1 )
 
-d2 = tf.ones( (2, 2) )
-#print( d2 )
+if True:
+    a = np.random.normal( 0, 1, (1, 3) )
+    print( a.shape, a )
 
-d3 = tf.ones( (2,2,2) )
-#print( d3 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if False :
+    d0 = tf.ones( (1,) )
+    #print( d0 )
+
+    d1 = tf.ones( (2,) )
+    #print( d1 )
+
+    d2 = tf.ones( (2, 2) )
+    #print( d2 )
+
+    d3 = tf.ones( (2,2,2) )
+    #print( d3 )
 
 if False:
     a = np.zeros( [2, 3] )
@@ -20,7 +42,7 @@ if False:
 
 # print( np.empty((2,3)) )
 
-if True:
+if False:
     # b = tf.placeholder( tf.float32, [None, 128] )
     b = tf.Variable( tf.zeros([16,2]), shape=(None,2), validate_shape=False )
     print( b.numpy() )
@@ -48,11 +70,16 @@ if False:
     #tf.determinant( m )
     
     
-if True:
+if False:
     model = tf.keras.models.Sequential()
     model.add( tf.keras.layers.Dense( units=2, input_shape=(2,) ) )
     
     
     
 ####################################### test01
+
+
+
+
+
 

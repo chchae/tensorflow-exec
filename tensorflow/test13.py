@@ -1,15 +1,7 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-import logging
-logging.getLogger('tensorflow').disabled = True
-from silence_tensorflow import silence_tensorflow
-silence_tensorflow()
-
-from tensorflow import keras as K
+import tensorflow.keras as K
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import tensorflow.keras.datasets.mnist
 
 
 
@@ -74,11 +66,9 @@ accuracies = []
 iteraction_checkpoints = []
 
 def train( iterations, batch_size, sample_interval ) :
-    (X_train, _), (_,_) = K.datasets.mnist.load_data()
+    (X_train, _), (_,_) = K.datasets.mnist.load_data()   # (60000, 28, 28)
     X_train = X_train / 127.5 - 1.0
-    print( X_train.shape )
-    X_train = np.expand_dims( X_train, axis=3 )
-    print( X_train.shape )
+    X_train = np.expand_dims( X_train, axis=3 )          # (60000, 28, 28, 1)
     real = np.ones( (batch_size, 1) )
     fake = np.zeros( (batch_size, 1) )
 
