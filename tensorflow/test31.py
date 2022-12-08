@@ -162,3 +162,4 @@ batch_size = 128
 sample_interval = 1000
 gan.exec_train( iterations, batch_size, sample_interval )
 gan.plot_training_history()
+
